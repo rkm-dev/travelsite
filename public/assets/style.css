@@ -1,0 +1,44 @@
+
+.empty-well{
+	background: transparent;
+}
+
+.bigger-icon{
+	font-size: 36px;
+}
+
+.footer-background{
+	background: black;
+	color: white;
+}
+
+label.error{
+	color: red;
+    display: block;
+    text-align: right;
+    text-shadow: 0 0 10px orchid;
+    margin: -20px 10px 0px 0px;
+}
+
+label.error:after {
+	content: "\26A0";
+    font-size: 20px;
+    display: inline-block;
+    margin: -10px -35px -10px 15px;
+}
+
+@media (max-width:550px) {
+	label.error{
+	    margin: 0px 11px -10px 0px;
+	}
+
+	label.error:after {
+	    margin: 0px -15px 0px 10px;
+	}
+}
+
+@media (max-width:300px) {
+	label.error:after {
+	    content: ' ';
+	}
+}
