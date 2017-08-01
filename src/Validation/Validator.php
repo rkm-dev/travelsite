@@ -14,7 +14,6 @@
 
 				foreach ($rules as $rule) 
 				{
-					//getting an array ['first_name' => 'min:3', 'last_name' => 'min:3', ...]
 					$exploded = explode(":", $rule);
 					
 					switch ($exploded[0]) 
