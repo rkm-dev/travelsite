@@ -11,4 +11,6 @@
 
     $router->map('GET', '/login', 'Travelsite\Controllers\RegisterController@getShowLoginPage', 'login');
 
+    $router->map('GET', '/about', 'Travelsite\Controllers\PageController@getShowPage', 'generic_page');
+
 ?>
