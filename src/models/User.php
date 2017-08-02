@@ -1,10 +1,13 @@
-<?php  namespace Travelsite\Models;
+<?php 
+    namespace Travelsite\Models;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+	use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class User extends Eloquent {
-
-	public $timestamps = false;
-}
- 
+	class User extends Eloquent 
+	{
+		public function testimonials()
+		{
+			return $this->hasMany('Travelsite\models\Testimonial');
+		}
+	}
 ?>
