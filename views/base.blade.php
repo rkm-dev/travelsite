@@ -44,22 +44,22 @@
 
 	</div>
 
-	<div class="footer footer-background">
+	<footer class="footer footer-background">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-sm-3">
 					Contact Us
 					
 				</div>
-				<div class="col-md-6">
+				<div class="col-sm-6">
 					footer text
 				</div>
-				<div class="col-md-3">
+				<div class="col-sm-3">
 					footer text
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js" integrity="sha256-7LkWEzqTdpEfELxcZZlS6wAx5Ff13zZ83lYO2/ujj7g=" crossorigin="anonymous"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" integrity="sha256-HmfY28yh9v2U4HfIXC+0D6HCdWyZI42qjaiCFEJgpo0=" crossorigin="anonymous"></script>
