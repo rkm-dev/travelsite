@@ -44,16 +44,20 @@
 
 	</div>
 
-	<div class="row footer-background">
-		<div class="col-md-3">
-			<h4>Contact Us</h4>
-			
-		</div>
-		<div class="col-md-6">
-			footer text
-		</div>
-		<div class="col-md-3">
-			footer text
+	<div class="footer footer-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					Contact Us
+					
+				</div>
+				<div class="col-md-6">
+					footer text
+				</div>
+				<div class="col-md-3">
+					footer text
+				</div>
+			</div>
 		</div>
 	</div>
 

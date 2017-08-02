@@ -1,3 +1,23 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/*--------------------------------------------------*/
 
 .empty-well{
 	background: transparent;
@@ -8,8 +28,12 @@
 }
 
 .footer-background{
-	background: black;
-	color: white;
+	background: #080808;
+	color: #9d9d9d;
+	padding: 15px 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 label.error{
