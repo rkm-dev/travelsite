@@ -1,4 +1,7 @@
 <?php
+
+	$controller = null;
+	$method     = null;
     
     include("../bootstrap/start.php");
 
@@ -10,12 +13,24 @@
 
 	$match = $router->match();
 
-	list($controller, $method) = explode("@", $match['target']);
+	// var_dump($match);
+	// exit();
 
-	if(is_callable( array($controller, $method) ))
+	//dd($match);
+
+	if(is_string($match['target']))
+	{
+		list($controller, $method) = explode("@", $match['target']);
+	}
+
+	if(($controller != null) && (is_callable( array($controller, $method) )))
 	{
 		$object = new $controller();
 		call_user_func_array(array($object, $method), array($match['params']));
+	}
+	else if($match && is_callable($match['target']))
+	{
+		call_user_func_array($match['target'], $match['params']);
 	}
 	else
 	{

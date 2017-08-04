@@ -13,4 +13,19 @@
 
     $router->map('GET', '/about', 'Travelsite\Controllers\PageController@getShowPage', 'generic_page');
 
+    $router->map('GET', '/test', function() {
+    	$user = Travelsite\models\User::find(1);
+    	//dd($user);
+
+    	$testimonials = $user->testimonials()->get();
+    	//dd($testimonials);
+
+    	//$testimonials = Travelsite\models\User::find(1)->testimonials()->get();
+    	//dd($testimonials);
+
+    	echo $user->first_name;
+    	echo "<br>";
+    	print_r($testimonials);
+
+    });
 ?>
