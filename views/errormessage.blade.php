@@ -11,4 +11,11 @@
     			@endforeach
 	    	</ul>
     	</div>
+    @endif
+	
+	@if (isset($_SESSION['successmsg']))
+		<div class="alert alert-success" role="alert">
+				{!! $_SESSION['successmsg'] !!}
+		</div>
 	@endif
+	

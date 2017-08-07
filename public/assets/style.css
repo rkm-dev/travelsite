@@ -47,14 +47,14 @@ label.error{
     display: block;
     text-align: right;
     text-shadow: 0 0 10px orchid;
-    margin: -20px 10px 0px 0px;
+    margin: -22px 10px 0px 0px;
 }
 
 label.error:after {
 	content: "\26A0";
     font-size: 20px;
     display: inline-block;
-    margin: -10px -35px -10px 15px;
+    margin: -10px -35px -10px 11px
 }
 
 @media (max-width:550px) {

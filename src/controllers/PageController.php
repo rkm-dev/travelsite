@@ -1,7 +1,6 @@
 <?php  namespace Travelsite\Controllers;
 
 	use duncan3dc\Laravel\BladeInstance;
-
 	use Travelsite\models\Page;
 
 	class PageController extends BaseController

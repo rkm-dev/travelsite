@@ -14,17 +14,17 @@
 			    <h1>Log in</h1>
 			    <hr>
 
-			    <form class="form-horizontal">
+			    <form name="loginform" id="loginform" action="/login" method="post" class="form-horizontal">
 			    	<div class="form-group">
-			    	    <label for="username" class="col-sm-2 control-label">Email</label>
+			    	    <label for="email" class="col-sm-2 control-label">Email</label>
 			    	    <div class="col-sm-10">
-			    	    	<input type="email" id="username" name="username" class="form-control" placeholder="user@email.com">
+			    	    	<input type="email" id="email" name="email" class="form-control email required" placeholder="user@email.com">
 			    	    </div>
 			    	</div>
 			    	<div class="form-group">
 			    		<label for="password" class="col-sm-2 control-label">Password</label>
 			    		<div class="col-sm-10">
-			    			<input type="password" id="password" placeholder="Password" class="form-control" name="password">
+			    			<input type="password" id="password" placeholder="Password" class="form-control required" name="password">
 			    		</div>
 			    	</div>
 			    	<hr>
@@ -40,4 +40,12 @@
 			<div class="col-sm-2"></div>
 		</div>
 
+	@stop
+
+	@section('bottomjs')
+		<script>
+			$(document).ready(function(){
+				$("#loginform").validate();
+			});
+		</script>
 	@stop

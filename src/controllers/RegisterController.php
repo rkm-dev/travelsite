@@ -2,6 +2,7 @@
 
 	use Travelsite\Models\User;
 	use Travelsite\Validation\Validator;
+	use Travelsite\Auth\LoggedIn;
 
 	class RegisterController extends BaseController
 	{
@@ -10,7 +11,12 @@
 			//include("../views/register.html");
 			//echo $this->twig->render("register.html");
 
-			echo $this->blade->render('register');
+			if(LoggedIn::user())
+			{
+				header("Location: /");
+			}else{
+				echo $this->blade->render('register');
+			}
 		}
 
 
@@ -52,29 +58,22 @@
 			//data saving into database;
 				$user = new User;
 
-				$user->id = 11;
 				$user->first_name = $_REQUEST['first_name'];
 				$user->last_name  = $_REQUEST['last_name'];
 				$user->email      = $_REQUEST['email'];
 				$user->password   = password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$user->save();
 
-				echo "<pre>";
-				var_dump($user);
-				echo "</pre>";
+				// echo "<pre>";
+				// var_dump($user);
+				// echo "</pre>";
 
-				echo "<br> Posted";
-			exit;
-		}
+				// echo "<br> Posted";
 
-
-		public function getShowLoginPage()
-		{
-			//include("../views/login.html");
-			//echo $this->twig->render("login.html");
-
-			echo $this->blade->render("login");
+				$_SESSION['successmsg'] = "<p> Registeration success, Please Login </p>";
+				echo $this->blade->render('login');
+				unset($_SESSION['successmsg']);
+			exit();
 		}
 	}
-
 ?>
