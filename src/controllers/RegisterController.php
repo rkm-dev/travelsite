@@ -74,7 +74,7 @@
 				$message = $this->blade->render('emails.welcome-email');
 				SendEmail::sendEmail($user->email, "Greetings From Travelsite", $message);
 
-				$_SESSION['successmsg'] = "<p> You are almost done, Please check-in your email and confirm your email address for registeration completion </p>";
+				$_SESSION['successmsg'] = "<p> You are almost done, Please check-in and verify your email address to complete your registration </p>";
 				echo $this->blade->render('login');
 				unset($_SESSION['successmsg']);
 			exit();
