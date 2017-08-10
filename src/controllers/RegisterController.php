@@ -5,6 +5,7 @@
 	use Travelsite\Auth\LoggedIn;
 	use duncan3dc\Laravel\BladeInstance;
 	use Travelsite\Email\SendEmail;
+	use Travelsite\Models\UserPending;
 
 	class RegisterController extends BaseController
 	{
@@ -71,7 +72,13 @@
 				// echo "</pre>";
 				// echo "<br> Posted";
 
-				$message = $this->blade->render('emails.welcome-email');
+				$token = md5(uniqid(rand(), true)) . md5(uniqid(rand(), true));
+				$user_pending = new UserPending;
+				$user_pending->token = $token;
+				$user_pending->user_id = $user->id;
+				$user_pending->save();	
+
+				$message = $this->blade->render('emails.welcome-email', ['token' => $token]);
 				SendEmail::sendEmail($user->email, "Greetings From Travelsite", $message);
 
 				$_SESSION['successmsg'] = "<p> You are almost done, Please check-in and verify your email address to complete your registration </p>";

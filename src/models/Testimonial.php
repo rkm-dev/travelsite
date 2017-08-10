@@ -7,7 +7,7 @@
 	{
 		public function user()
 		{
-			return $this->hasOne('Travelsite\models\User');
+			return $this->hasOne('Travelsite\Models\User');
 		}
 	}
 ?>

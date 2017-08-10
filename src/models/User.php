@@ -7,7 +7,7 @@
 	{
 		public function testimonials()
 		{
-			return $this->hasMany('Travelsite\models\Testimonial');
+			return $this->hasMany('Travelsite\Models\Testimonial');
 		}
 	}
 ?>
