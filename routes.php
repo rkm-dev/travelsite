@@ -25,6 +25,7 @@
     $router->map('GET', '/[*]', 'Travelsite\Controllers\PageController@getShowPage', 'generic_page');
 
 
+
     /*
         //getting the usr data from the database
         $router->map('GET', '/testuser', 'Travelsite\Controllers\AuthenticationController@getTestUser', 'testuser');

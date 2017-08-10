@@ -66,6 +66,7 @@
 			header("Location: /login");
 			exit();
 		}
+		
 
 		/*
 			public function getTestUser()

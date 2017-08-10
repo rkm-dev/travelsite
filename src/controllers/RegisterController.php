@@ -3,6 +3,8 @@
 	use Travelsite\Models\User;
 	use Travelsite\Validation\Validator;
 	use Travelsite\Auth\LoggedIn;
+	use duncan3dc\Laravel\BladeInstance;
+	use Travelsite\Email\SendEmail;
 
 	class RegisterController extends BaseController
 	{
@@ -67,10 +69,12 @@
 				// echo "<pre>";
 				// var_dump($user);
 				// echo "</pre>";
-
 				// echo "<br> Posted";
 
-				$_SESSION['successmsg'] = "<p> Registeration success, Please Login </p>";
+				$message = $this->blade->render('emails.welcome-email');
+				SendEmail::sendEmail($user->email, "Greetings From Travelsite", $message);
+
+				$_SESSION['successmsg'] = "<p> You are almost done, Please check-in your email and confirm your email address for registeration completion </p>";
 				echo $this->blade->render('login');
 				unset($_SESSION['successmsg']);
 			exit();
