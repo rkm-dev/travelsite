@@ -67,15 +67,17 @@
 			exit();
 		}
 
-		public function getTestUser()
-		{
-			//dd($_SESSION['user']);
-			
-			//$user = $_SESSION['user'];
-			//dd($user->first_name, $user->email, $user->testimonials);
+		/*
+			public function getTestUser()
+			{
+				//dd($_SESSION['user']);
+				
+				//$user = $_SESSION['user'];
+				//dd($user->first_name, $user->email, $user->testimonials);
 
-			dd(LoggedIn::user(), LoggedIn::user()->first_name);
-		}
+				dd(LoggedIn::user(), LoggedIn::user()->first_name);
+			}
+		*/
 	}
 
 ?>
