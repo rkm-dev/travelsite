@@ -23,8 +23,41 @@
 
     $router->map('GET', '/testuser', 'Travelsite\Controllers\AuthenticationController@getTestUser', 'testuser');
 
+
+    //testing mail service
+    $router->map('GET', '/testmail', function() {
+        
+        /**
+            // Create the Transport
+            $transport = (new Swift_SmtpTransport(getenv('SMTP_HOST'), getenv('SMTP_PORT')))
+                       ->setUsername(getenv('SMTP_USER'))
+                       ->setPassword(getenv('SMTP_PASS'));
+
+            // Create the Mailer using your created Transport
+            $mailer = new Swift_Mailer($transport);
+
+            // Create a message
+            $message = (new Swift_Message('Wonderful Subject'))
+                    ->setFrom(['john@doe.com' => 'John Doe'])
+                    ->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+                    ->setBody('Here is the message itself');
+
+            // Send the message
+            $result = $mailer->send($message);
+        */
+
+        //Travelsite\Email\SendEmail::sendEmail('john@got.com', 'test subject', 'this is the message');
+        Travelsite\Email\SendEmail::sendEmail('john@got.com', 'test subject', 'this is the message', 'buddy@india.in');
+
+        echo "Mail sent"; 
+    });
+
+
     //generic Route should always be placed last
     $router->map('GET', '/[*]', 'Travelsite\Controllers\PageController@getShowPage', 'generic_page');
+
+
+
 
     /*
         $router->map('GET', '/slug', function() {
