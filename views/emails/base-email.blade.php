@@ -1,6 +1,5 @@
 
-@yeild('body')
-
+@yield('body')
 
 <hr>
 Travelsite India Ltd.<br>

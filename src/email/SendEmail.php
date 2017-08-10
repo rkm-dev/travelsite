@@ -21,7 +21,7 @@
 		    $message = (new \Swift_Message($subject))
 		            ->setFrom($from )
 		            ->setTo($to)
-		            ->setBody($message);
+		            ->setBody($message, 'text/html');
 
 		    // Send the message
 		    $result = $mailer->send($message);
