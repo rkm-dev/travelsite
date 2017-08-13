@@ -11,6 +11,15 @@
     $router->map('GET', '/register', 'Travelsite\Controllers\RegisterController@getShowRegisterPage', 'register');
     $router->map('POST', '/register', 'Travelsite\Controllers\RegisterController@postShowRegisterPage', 'register_post');
 
+    $router->map('GET', '/verify-account', 'Travelsite\Controllers\RegisterController@getVerifyAccount', 'verify_account');
+
+    //testimonial routes
+    $router->map('GET', '/add-testimonial', 'Travelsite\Controllers\TestimonialController@getShowAdd', 'add_testimonial');
+    $router->map('POST', '/add-testimonial', 'Travelsite\Controllers\TestimonialController@postShowAdd', 'add_testimonial_post');
+
+    //display all testimonials route
+    $router->map('GET', '/testimonials', 'Travelsite\Controllers\TestimonialController@getShowTestimonials', 'testimonials');
+
     //login routes
     $router->map('GET', '/login', 'Travelsite\Controllers\AuthenticationController@getShowLoginPage', 'login');
     $router->map('POST', '/login', 'Travelsite\Controllers\AuthenticationController@postShowLoginPage', 'login_post');

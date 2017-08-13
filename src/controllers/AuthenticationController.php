@@ -44,6 +44,15 @@
 				$okay = false;
 			}
 
+			if($user->active == 0){
+				$okay = false;
+				
+				$_SESSION['msg'] = ["Please check-in and verify your email to activate your account and then login"];
+				echo $this->blade->render("login");
+				unset($_SESSION['msg']);
+				exit();
+			}
+
 			//if valid, login, if not redirect back to login page with an error
 			if($okay) {
 				$_SESSION['user'] = $user;

@@ -25,11 +25,13 @@
 
 		public function postShowRegisterPage()
 		{
+			$errors = [];
+			
 			//advanced data validation
 			$validation_data = [
 			 	"first_name"   => "min:3",
 			 	"last_name"    => "min:3",
-			 	"email"        => "email|equalTo:verify_email",
+			 	"email"        => "email|equalTo:verify_email|unique:User",
 			 	"verify_email" => "email",
 			 	"password"     => "min:3|equalTo:confirm_password",
 			 	
@@ -85,6 +87,36 @@
 				echo $this->blade->render('login');
 				unset($_SESSION['successmsg']);
 			exit();
+		}
+
+		public function getVerifyAccount()
+		{
+			$user_id = 0;
+			$token = $_GET['token'];
+
+			//look for the token in the database
+			$user_pending =  UserPending::where('token', '=', $token)->get();
+
+			foreach ($user_pending as $item) 
+			{
+				$user_id = $item->user_id;
+			}
+
+			if($user_id > 0)
+			{
+				//make user account active
+				$user = User::find($user_id);
+				$user->active = 1;
+				$user->save();
+
+				UserPending::where('token', '=', $token)->delete();
+
+				header("Location: /account-activated");
+				exit();
+			} else {
+				header("Location: /page-not-found");
+				exit();
+			}
 		}
 	}
 ?>

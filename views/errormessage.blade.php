@@ -15,7 +15,7 @@
 	
 	@if (isset($_SESSION['successmsg']))
 		<div class="alert alert-success" role="alert">
-				{!! $_SESSION['successmsg'] !!}
+				<center>{!! $_SESSION['successmsg'] !!}</center>
 		</div>
 	@endif
 	

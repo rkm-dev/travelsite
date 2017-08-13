@@ -57,6 +57,13 @@ label.error:after {
     margin: -10px -35px -10px 11px
 }
 
+/*------------textarea------------*/
+textarea.form-control {
+    resize: none;
+    height: 80px;
+}
+
+
 @media (max-width:550px) {
 	label.error{
 	    margin: 0px 11px -10px 0px;

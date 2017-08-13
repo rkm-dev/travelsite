@@ -34,10 +34,20 @@
 							break;
 
 						case 'equalTo':
-						     if(Valid::equals($_REQUEST[$name])->Validate($_REQUEST[ $exploded[1] ]) == false) 
-						     {
+						    if(Valid::equals($_REQUEST[$name])->Validate($_REQUEST[ $exploded[1] ]) == false) 
+						    {
 						     	$errors[] = $name." value does not match verification value!";
-						     }
+						    }
+						    break;
+
+						case 'unique':
+							$model = "Travelsite\\models\\" . $exploded[1];
+							$table = new $model;
+							$results = $table::where($name, '=', $_REQUEST[$name])->get();
+							foreach ($results as $item) {
+								$errors[] = $_REQUEST[$name] . " is already registered";
+							}
+							break;
 
 						default:
 							//do nothing
