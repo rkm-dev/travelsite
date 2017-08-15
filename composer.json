@@ -16,7 +16,8 @@
         "robmorgan/phinx": "^0.8.1",
         "symfony/var-dumper": "^3.3",
         "cocur/slugify": "^2.5",
-        "swiftmailer/swiftmailer": "^6.0"
+        "swiftmailer/swiftmailer": "^6.0",
+        "phpunit/phpunit": "^6.3"
     },
     "autoload" : {
         "psr-4": {"Travelsite\\": "src/"}

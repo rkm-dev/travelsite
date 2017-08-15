@@ -49,7 +49,6 @@
 			//checking for $browser_title, $page_content
 			if(strlen($browser_title) == 0)
 			{
-				header("HTTP/1.0 404 Not Found");
 				header("Location: /page-not-found");
 				exit();
 			}
@@ -63,6 +62,7 @@
 
 		public function getShow404() 
 		{
+			header("HTTP/1.0 404 Not Found");
 			echo $this->blade->render('page-not-found');
 		}
 	}
